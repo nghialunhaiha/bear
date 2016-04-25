@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 
 import com.adayroi.core.Custom;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -48,6 +49,29 @@ public class Account {
 			driver.findElement(By.xpath("/html/body/div/div/div[1]/form/button")).click();
 		}
 	}
+	
+	@Then("^I input name's product to search box then I click button Search$")
+	public void i_input_name_s_product_to_search_box_then_I_click_button_Search() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    WebElement searchBox = driver.findElement(By.xpath("//*[@id='header__main__segment_search__form__input']"));
+	    searchBox.sendKeys("Sữa tiệt trùng NutiFood có đường túi 220ml");
+	    WebElement buttonSearch = driver.findElement(By.xpath("//*[@id='header__main__segment_search__form__submit']"));
+	    buttonSearch.click();
+	}
 
+	@Then("^I click image's product to view detail product$")
+	public void i_click_image_s_product_to_view_detail_product() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    WebElement imageProd = driver.findElement(By.xpath("/html/body/div[4]/div/div[2]/div[2]/div/div[1]/div/div[1]/span/a/img"));
+	    imageProd.click();
+	}
+
+	@Then("^I click button Add to cart$")
+	public void i_click_button_Add_to_cart() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    WebElement buttonAddtoCart = driver.findElement(By.xpath("//*[@id='top_shopping_button']"));
+	    buttonAddtoCart.click();
+	}
+	//*[@id="top_shopping_button"]
 
 }
