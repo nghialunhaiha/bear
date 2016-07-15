@@ -38,13 +38,14 @@ public class Demo {
 		// Write code here that turns the phrase above into concrete actions
 		WebElement loginFrame = driver.findElement(By.id("auth_iframe"));
 		driver.switchTo().frame(loginFrame);
-		if (Custom.waitElementDisplay(driver, By.xpath("//*[@id='Email']"), 20)) {
-			WebElement email = driver.findElement(By.xpath("//*[@id='Email']"));
-			email.sendKeys("v.thaodt2@adayroi.com");
-			WebElement password = driver.findElement(By.xpath("//*[@id='Password']"));
-			password.sendKeys("123456m");
-			driver.findElement(By.xpath("/html/body/div/div/div[1]/form/button")).click();
-		}
+//		if (Custom.waitElementDisplay(driver, By.xpath("//*[@id='Email']"), 20)) {
+//			WebElement email = driver.findElement(By.xpath("//*[@id='Email']"));
+//			email.sendKeys("v.thaodt2@adayroi.com");
+//			WebElement password = driver.findElement(By.xpath("//*[@id='Password']"));
+//			password.sendKeys("123456m");
+//			driver.findElement(By.xpath("/html/body/div/div/div[1]/form/button")).click();
+//		}
+		throw new PendingException();
 	}
 
 	@Then("^I click image's product to view detail product$")
